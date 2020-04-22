@@ -69,7 +69,7 @@ latent_dim = 128
 embedding_dim = 20
 n_hidden = 16
 clip = 0.5
-epochs = 1
+epochs = 50
 
 gate_type = args.gate_type
 

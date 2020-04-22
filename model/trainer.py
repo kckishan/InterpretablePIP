@@ -83,9 +83,6 @@ def trainer(model, optimizer, data_dict, device, model_name, epochs=20,clip=5):
         print("Epoch {}/{} Train Loss: {:.06f} Val AUC: {:.06f} Val AP: {:.06f} Best AP: {:.06f}{}".format(epoch+1, epochs, avg_loss, val_auc, val_ap, best_ap, status))
         t  = time.time() - t_total
         print("Total time elapsed per epoch: {:.4f}s".format((t)))
-        with open("time_log.txt","a+") as f:
-            f.write(str(t))
-            f.write("\n")
 
         if cant_wait == 0:
             print("Early Stopping")
