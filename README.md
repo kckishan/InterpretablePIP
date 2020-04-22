@@ -1,8 +1,5 @@
-# Interpretable Sparse Gaussian Embedding for Protein-Protein Interaction Prediction
-This is the pytorch implementation of the Protein2Gauss as described in our paper.
-
-## Architecture of Protein2Gauss
-![](figures/architecture.png)
+# Interpretable protein-protein interaction prediction based on sparse gated sequence encoder
+This is the pytorch implementation of the InterpretablePIP.
 
 Requirements 
 * PyTorch
