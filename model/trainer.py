@@ -33,7 +33,7 @@ def trainer(model, optimizer, data_dict, device, model_name, epochs=20,clip=5):
         losses = []
         train_ind = np.random.permutation(len(data_dict['train_pairs']))
         train_interactions = data_dict['train_pairs'][train_ind]
-        for batch_id, (batch, label) in enumerate(lib.get_batches(train_interactions, 5000)):
+        for batch_id, (batch, label) in enumerate(lib.get_batches(train_interactions, 256)):
             model.train()
             seq_array, lens_array, id2idx = lib.get_subset_tensor(data_dict['seq_tensor'], data_dict['lengths'], batch, data_dict['protname2index'])
             # move tensors to GPU if available

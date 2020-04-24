@@ -13,7 +13,7 @@ warnings.filterwarnings("ignore")
 
 
 parser = argparse.ArgumentParser(description="Sequence2Gauss")
-parser.add_argument("--dataset", type=str, default='human',
+parser.add_argument("--dataset", type=str, default='yeast',
 					help="yeast or human")
 parser.add_argument("--gate-type", type=str, default="fusedmax",
                     help="Type of gating mechanism")
@@ -30,10 +30,10 @@ dataset =args.dataset
 embedding_file = "data/embeddings/embeddings.pkl"
 
 # file that contains protein name and sequence
-id2seq_file = "data/processed/subset_processed"+dataset+".tsv"
+id2seq_file = "data/processed/"+dataset+"/protein.dictionary.tsv"
 
 # file that contains interaction dataset
-interactions_file = "data/processed/"+dataset+"_interactions_all.tsv"
+interactions_file = "data/processed/"+dataset+"/protein.actions.tsv"
 
 
 # check the device type: CPU or GPU
@@ -90,7 +90,7 @@ if not args.test:
     train_pairs, val_pairs = train_test_split(train_pairs, test_size=0.2)
     print(train_pairs.shape, val_pairs.shape, test_pairs.shape)
 
-    optimizer = optim.Adam(model.parameters(), lr=0.001)
+    optimizer = optim.Adam(model.parameters(), lr=0.003)
 
     # define data dictionary to pass
     data_dict = {'train_pairs': train_pairs,

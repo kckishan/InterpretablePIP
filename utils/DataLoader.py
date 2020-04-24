@@ -53,8 +53,8 @@ class DataLoader():
         for row_num in range(id2seq_df.shape[0]):
             row = id2seq_df.iloc[row_num,:]
             # print(row)
-            protname2index[row[1]] = index
-            seqs.append(row[2])
+            protname2index[row[0]] = index
+            seqs.append(row[1])
             index += 1
         return seqs, protname2index
 
